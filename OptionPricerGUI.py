@@ -20,10 +20,21 @@ def call_put_selector():
         #put
         pass
 
+#function can be used to bind multiple commands to single entity.
+def combine_funcs(*funcs):
+    def inner_combined_func(*args, **kwargs):
+        for f in funcs:
+            f(*args, **kwargs)
+    return inner_combined_func()
+
+
 #GUI
 master = Tk() 
 master.geometry("600x400")
 Current_stock = StringVar()
+risk_free = IntVar()
+strike_price = IntVar()
+time_maturity = IntVar()
 
 #define gui entries and labels
 var = IntVar()
@@ -49,14 +60,14 @@ Label(master, text = "Parameters").grid(row = 6, sticky = W)
 
 #strike price
 Label(master, text = "Strike: ").grid(row = 7, sticky = W)
-K = Entry(master).grid(row = 7, column = 1, sticky = W)
+e_1 = Entry(master).grid(row = 7, column = 1, sticky = W)
 
 #time to maturity
 Label(master, text = "Time to Maturity: ").grid(row = 8, sticky = W)
-K = Entry(master).grid(row = 8, column = 1, sticky = W)
+e_2 = Entry(master).grid(row = 8, column = 1, sticky = W)
 
 #risk-free interest rate
 Label(master, text = "Risk-Free Interest Rate: ").grid(row = 9, sticky = W)
-S = Entry(master).grid(row = 9, column = 1, sticky = W)
+e_3 = Entry(master).grid(row = 9, column = 1, sticky = W)
 
 mainloop()
