@@ -27,14 +27,24 @@ def combine_funcs(*funcs):
             f(*args, **kwargs)
     return inner_combined_func()
 
+def get_selection():
+    spot = e_0.get()
+    strike = e_1.get()
+    maturity = e_2.get()
+    risk_rate = e_3.get()
+    vol = e_4.get()
+
+    #call option price
+    S = int(spot)
+    K = int(strike)
+    r = int(risk_rate)
+    v = int(vol)
+    t = int(maturity)
 
 #GUI
 master = Tk() 
 master.geometry("600x400")
 Current_stock = StringVar()
-risk_free = IntVar()
-strike_price = IntVar()
-time_maturity = IntVar()
 
 #define gui entries and labels
 var = IntVar()
@@ -53,21 +63,39 @@ e1 = Entry(master)
 e1.grid(row=3, column=1, sticky = W) 
 
 b = Button(master, text="Show", command=stock_price) 
-b.grid(row=3, column=2, columnspan=2, rowspan=2, padx=5, pady=5, sticky = W) 
+b.grid(row=3, column=3, columnspan=2, sticky = W)
 
 'Black-Scholes Option Pricer Entries'
-Label(master, text = "Parameters").grid(row = 6, sticky = W)
+Label(master, text = "Parameters").grid(row = 5, sticky = W)
+
+#spot price
+Label(master, text = "Spot: ").grid(row = 6, sticky = W)
+e_0 = Entry(master)
+e_0.grid(row = 6, column = 1, sticky = W)
 
 #strike price
 Label(master, text = "Strike: ").grid(row = 7, sticky = W)
-e_1 = Entry(master).grid(row = 7, column = 1, sticky = W)
+e_1 = Entry(master)
+e_1.grid(row = 7, column = 1, sticky = W)
 
 #time to maturity
 Label(master, text = "Time to Maturity: ").grid(row = 8, sticky = W)
-e_2 = Entry(master).grid(row = 8, column = 1, sticky = W)
+e_2 = Entry(master)
+e_2.grid(row = 8, column = 1, sticky = W)
 
 #risk-free interest rate
 Label(master, text = "Risk-Free Interest Rate: ").grid(row = 9, sticky = W)
-e_3 = Entry(master).grid(row = 9, column = 1, sticky = W)
+e_3 = Entry(master)
+e_3.grid(row = 9, column = 1, sticky = W)
+
+Label(master, text = "Implied Volatility: ").grid(row = 10, sticky = W)
+e_4 = Entry(master)
+e_4.grid(row = 10, column = 1, sticky = W)
+
+b = Button(master, text = "Calculate", command=get_selection)
+b.grid(row = 12, column = 1, sticky = W)
+
+
+
 
 mainloop()
