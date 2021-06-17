@@ -5,6 +5,8 @@ import warnings
 import numpy as np
 import pandas_datareader.data as web
 import pandas as pd
+from math import log, exp, sqrt
+from scipy.stats import norm
 
 #funcs
 def stock_price(): 
@@ -40,6 +42,15 @@ def get_selection():
     r = int(risk_rate)
     v = int(vol)
     t = int(maturity)
+
+    #call/put formulas
+    d1 = (np.log(S/K) + (r + ((v*v)/2)) * t) / (v * sqrt(t))
+    d2 = d1 - (v * sqrt(t))
+    call = (norm.cdf(d1) * S) - (norm.cdf(d2) * K * exp(-r*t))
+    put = K * exp(-r * t) * norm.cdf(-d2) - S * norm.cdf(-d1)
+    print(call)
+    print(put)
+
 
 #GUI
 master = Tk() 
@@ -94,8 +105,5 @@ e_4.grid(row = 10, column = 1, sticky = W)
 
 b = Button(master, text = "Calculate", command=get_selection)
 b.grid(row = 12, column = 1, sticky = W)
-
-
-
 
 mainloop()
