@@ -15,7 +15,8 @@ Currently the product features a fully functional Black-Scholes Calcultor. Enter
 * Create a robust predictive model to help value a stock. 
 
 ## GUI Interface
-[![Video](http://img.youtube.com/vi/KdWSMBeIFdk/0.jpg)](https://youtu.be/KdWSMBeIFdk)
+(![Black_Scholes GUI](https://user-images.githubusercontent.com/64059855/125152770-26b22b80-e10c-11eb-8c32-0db842ff96b8.PNG)
+
   
 ## Author
 Created by Zachary Wyman
