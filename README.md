@@ -3,7 +3,7 @@
 ## Development
 Steps to run locally:  
 
-0. clone the repo into a local directory using ```git clone https://github.com/ZacharyJWyman/Black-Scholes-Option-Pricer-.git````
+0. clone the repo into a local directory using ```git clone https://github.com/ZacharyJWyman/Black-Scholes-Option-Pricer-.git```
 1. make sure you have dependencies downloaded. 
 2. to run GUI ```python OptionPricerGUI.py``` in the terminal.
 
