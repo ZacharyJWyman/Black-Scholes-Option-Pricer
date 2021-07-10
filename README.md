@@ -19,4 +19,4 @@ Currently the product features a fully functional Black-Scholes Calcultor. Enter
 
   
 ## Author
-Created by *Zachary Wyman*
+Created by *Zachary Wyman*.
