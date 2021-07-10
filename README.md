@@ -8,7 +8,7 @@ Steps to run locally:
 2. to run GUI ```python OptionPricerGUI.py``` in the terminal.
 
 ### Current:
-Currently the product features a fully functional Black-Scholes Calcultor. Enter in spot, strike, risk-free rate, time to maturity, and volatility. The calculator will then return both call and put prices as well as greeks associated. This can be useful in valuing option prices quickly. I have also integrated a connection with yahoo finance so we can return the current stock price by entering the ticker in the GUI.
+Currently the product features a fully functional Black-Scholes Calculator. Enter in spot, strike, risk-free rate, time to maturity, and volatility. The calculator will then return both call and put prices as well as greeks associated. This can be useful in valuing option prices quickly. I have also integrated a connection with yahoo finance so we can return the current stock price by entering the ticker in the GUI.
   
 ### What comes next?
 * Integrate in dividend optionality. 
