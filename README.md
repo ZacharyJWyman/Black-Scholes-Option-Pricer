@@ -8,14 +8,13 @@ Steps to run locally:
 2. to run GUI ```python OptionPricerGUI.py``` in the terminal.
 
 ### Current:
-Currently the bot is linked to a paper trading account and can make paper trades when the market is open. There is also a fully functional GUI that incorporates a deep learning model to predict stock prices. The GUI can make trades for you and store past orders as well as fetch current stock price and predicted price for stocks publicly traded in the U.S. 
+Currently the product features a fully functional Black-Scholes Calcultor. Enter in spot, strike, risk-free rate, time to maturity, and volatility. The calculator will then return both call and put prices as well as greeks associated. This can be useful in valuing option prices quickly. I have also integrated a connection with yahoo finance so we can return the current stock price by entering the ticker in the GUI.
   
 ### What comes next?
-* Integrate future forecasting (10-Day & 30-Day) periods. 
-* Flag buy and sell periods with model for smart trading. 
-* Create a more robust model (ideas: stock sentiment (news), seasonality trends). 
+* Integrate in dividend optionality. 
+* Create a robust predictive model to help value a stock. 
 
-## Using the GUI
+## GUI Interface
 [![Video](http://img.youtube.com/vi/KdWSMBeIFdk/0.jpg)](https://youtu.be/KdWSMBeIFdk)
   
 ## Author
